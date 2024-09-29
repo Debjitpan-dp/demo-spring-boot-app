@@ -44,11 +44,5 @@ public class Student {
     this.gender = gender;
   }
 
-  public Student(String name, String email, int age, Gender gender) {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-    this.gender = gender;
-  }
 
 }
