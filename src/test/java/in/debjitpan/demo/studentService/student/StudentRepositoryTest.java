@@ -22,15 +22,14 @@ class StudentRepositoryTest {
 
   @Test
   void itShouldCheckWhenStudentEmailExists() {
-    // given
+
     String email = "akash@gmail.com";
-    Student student = new Student("Akash", email, Gender.MALE);
+    Student student =
+        Student.builder().name("Akash").email(email).age(23).gender(Gender.MALE).build();
     studentRepository.save(student);
 
-    // when
     boolean expected = studentRepository.selectExistsEmail(email);
 
-    // then
     assertThat(expected).isTrue();
   }
 

@@ -10,6 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder(toBuilder = true)
 @Entity
 @Table
 public class Student {
@@ -29,6 +30,9 @@ public class Student {
   @Column(nullable = false, unique = true)
   private String email;
 
+  @Column
+  private int age;
+
   @NotNull
   @Enumerated(EnumType.STRING)
   @Column(nullable = false)
@@ -39,4 +43,12 @@ public class Student {
     this.email = email;
     this.gender = gender;
   }
+
+  public Student(String name, String email, int age, Gender gender) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
+    this.gender = gender;
+  }
+
 }
